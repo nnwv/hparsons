@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="fav-blank.png">
+    <title>Henry Parsons | Oakland, CA</title>
+    <style>
+        body {
+            background-color: #679966;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* Ensure full height of the viewport */
+            margin: 0;
+            /* Remove default margin */
+            overflow: hidden;
+            box-sizing: border-box;
+            padding: 30px;
+        }
+
+        img {
+            max-width: 100%;
+            /* Set width of the image */
+            width: 350px;
+        }
+
+
+
+        .scene {
+            display: inline-block;
+            width: 200px;
+            height: 260px;
+            /*   border: 1px solid #CCC; */
+            margin: 40px 0;
+            perspective: 600px;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transform-origin: center right;
+            transition: transform 4s;
+        }
+
+        .card.is-flipped {
+            transform: translateX(-100%) rotateY(-180deg);
+        }
+
+        .card__face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            line-height: 260px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 40px;
+            backface-visibility: hidden;
+        }
+
+        .card__face--front {
+        }
+
+        .card__face--back {
+            background: slateblue;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scene scene--card">
+        <div class="card">
+            <div class="card__face card__face--front"><a class="link-contact"
+                    href="mailto:hparsons@cca.edu?subject=Hello%20Henry&body=I%20would%20love%20to%20talk%20more%20about%20a%20design%20project."><img
+                        src="hp-card-front.png" /></a>
+            </div>
+            <div class="card__face card__face--back">back side</div>
+        </div>
+    </div>
+
+    <script>
+
+        var cards = document.querySelectorAll('.card');
+
+        [...cards].forEach((card) => {
+            card.addEventListener('click', function (e) {
+                card.classList.toggle('is-flipped');
+            });
+        });
+
+    </script>
+
+
+</body>
+
+</html>
