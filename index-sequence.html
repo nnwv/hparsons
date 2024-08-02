@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="fav-blank.png">
+    <title>Henry Parsons | Oakland, CA</title>
+    <style>
+        body {
+            background-color: #679966;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ensure full height of the viewport */
+            margin: 0; /* Remove default margin */
+            overflow: hidden;
+            box-sizing: border-box;
+            padding: 30px;
+        }
+
+        img {
+            max-width: 100%; /* Set width of the image */
+            width: 350px;
+            /* position: relative; */
+        }
+
+        #imageA {
+z-index: 2;
+position: absolute;
+
+        }
+
+        #imageB {
+z-index: 1;
+position: absolute;
+
+        }
+
+        
+    </style>
+</head>
+<body> 
+
+    <a id="imageA" href="mailto:hparsons@cca.edu?subject=Hello%20Henry&body=I%20would%20love%20to%20talk%20more%20about%20a%20design%20project."><img src="hp-card-front.png" /></a> 
+    <a id="imageB" href="https://soundcloud.com/hhparsons"><img src="hp-card-back.png" /></a> 
+
+<script>
+
+document.body.addEventListener('click', function(event) {
+            // Check if the click target is the body itself or not an image
+            if (event.target.tagName.toLowerCase() !== 'img') {
+                // Get references to the images
+                var imageA = document.getElementById('imageA');
+                var imageB = document.getElementById('imageB');
+
+                // Get their current z-index values
+                var zIndexA = window.getComputedStyle(imageA).getPropertyValue('z-index');
+                var zIndexB = window.getComputedStyle(imageB).getPropertyValue('z-index');
+
+                // Swap the z-indexes
+                imageA.style.zIndex = zIndexB;
+                imageB.style.zIndex = zIndexA;
+            }
+        });
+
+
+</script>
+
+
+</body>
+
+
+
+</html>
