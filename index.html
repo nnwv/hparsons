@@ -4,55 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="fav-blank.png">
     <title>Henry Parsons | Oakland, CA</title>
     <style>
-        @font-face {
-            font-family: gillsanslight;
-            src: url(gillsanslight.woff2);
+        html,
+        body {
+            height: 100%;
+            margin: 0;
         }
 
         body {
-            background-color: #679966;
             display: flex;
-            flex-direction: column;
-            /* Arrange items in a column */
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            /* Ensure full height of the viewport */
-            margin: 0;
-            /* Remove default margin */
-            overflow: hidden;
-            box-sizing: border-box;
-            padding: 30px;
-
+            background: url("01.jpg") no-repeat center center;
+            background-size: cover;
+            font-family: Helvetica, Arial, sans-serif;
         }
 
-        img {
-            max-width: 100%;
-            /* Set width of the image */
-            width: 350px;
-            margin-bottom: 10px;
-            /* Space between the image and the link */
-        }
-
-        a {
+        .center-text {
             color: white;
-            /* Make the text color white to stand out */
-            font-size: 17px;
-            /* Adjust font size if needed */
-            font-family: 'gillsanslight';
+            font-weight: bold;
+            letter-spacing: -2px;
+            line-height: 60px;
+            font-size: 65px;
+            text-align: left;
+            padding: 5%;
+
         }
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+    a:hover {
+      background-color: #679966;
+      text-decoration: none;
+    }
+
+
+
     </style>
 </head>
 
 <body>
-    <a href="https://soundcloud.com/hhparsons"><img src="hp-card-back.png" alt="Henry Parsons"></a>
-
-    <a
-        href="mailto:hparsons@cca.edu?subject=Hello%20Henry&">CONTACT</a>
-
+    <div class="center-text">
+        <a href="mailto:henry@henryparsons.com?subject=Hello%20Henry&">Henry Parsons</a> is an
+        interior designer, artist and collector.
+        He lives in Oakland, California.
+    </div>
 </body>
 
 </html>
