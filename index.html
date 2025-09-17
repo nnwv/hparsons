@@ -1,58 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Henry Parsons | Oakland, CA</title>
-    <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Henry Parsons | Oakland, CA</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: url("01.jpg") no-repeat center center;
-            background-size: cover;
-            font-family: Helvetica, Arial, sans-serif;
-        }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url("01.jpg") no-repeat center center / cover;
+      font-family: Helvetica, Arial, sans-serif;
+      color: white;
+    }
 
-        .center-text {
-            color: white;
-            font-weight: bold;
-            letter-spacing: -2px;
-            line-height: 60px;
-            font-size: 65px;
-            text-align: left;
-            padding: 5%;
+    .center-text {
+      font-weight: bold;
+      font-size: clamp(40px, 9vw, 90px);  /* bumped up */
+      line-height: 1.05;
+      letter-spacing: -2px;
+      text-align: left;
+      padding: 6vw;
+      max-width: 30ch;
+    }
 
-        }
-
-a {
-    text-decoration: none;
-    color: white;
-}
+    a {
+      text-decoration: none;
+      color: white;
+    }
 
     a:hover {
       background-color: #679966;
       text-decoration: none;
     }
-
-
-
-    </style>
+  </style>
 </head>
-
 <body>
-    <div class="center-text">
-        <a href="mailto:henry@henryparsons.com?subject=Hello%20Henry&">Henry Parsons</a> is an
-        interior designer, artist and collector.
-        He lives in Oakland, California.
-    </div>
+  <div class="center-text">
+    <a href="mailto:henry@henryparsons.com?subject=Hello%20Henry&">Henry Parsons</a> is an
+    interior designer, artist and collector. He lives in Oakland, California.
+  </div>
 </body>
-
 </html>
