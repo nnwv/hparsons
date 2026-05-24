@@ -16,14 +16,25 @@
     body {
       font-family: Helvetica, Arial, sans-serif;
       color: white;
-
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
+    }
 
+    /* Background layers */
+    .bg {
+      position: fixed;
+      inset: 0;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      transition: opacity 5s ease-in-out;
+      z-index: -2;
+    }
+
+    .bg.top {
+      z-index: -1;
     }
 
     .center-text {
@@ -49,6 +60,10 @@
 </head>
 
 <body>
+  <!-- Background layers -->
+  <div class="bg" id="bg1"></div>
+  <div class="bg top" id="bg2"></div>
+
   <div class="center-text">
     <a href="mailto:henry@henryparsons.com?subject=Hello%20Henry&">
       Henry Parsons
@@ -64,12 +79,35 @@
       "images/03.jpg"
     ];
 
-    // Pick a random image each page load
-    const randomImage =
-      images[Math.floor(Math.random() * images.length)];
+    let current = 0;
 
-    // Apply background image
-    document.body.style.backgroundImage = `url(${randomImage})`;
+    const bg1 = document.getElementById("bg1");
+    const bg2 = document.getElementById("bg2");
+
+    // Initial images
+    bg1.style.backgroundImage = `url(${images[0]})`;
+    bg2.style.backgroundImage = `url(${images[1]})`;
+    bg2.style.opacity = 0;
+
+    let showingTop = false;
+
+    setInterval(() => {
+      current = (current + 1) % images.length;
+
+      const nextImage = images[current];
+
+      if (showingTop) {
+        bg1.style.backgroundImage = `url(${nextImage})`;
+        bg1.style.opacity = 1;
+        bg2.style.opacity = 0;
+      } else {
+        bg2.style.backgroundImage = `url(${nextImage})`;
+        bg2.style.opacity = 1;
+        bg1.style.opacity = 0;
+      }
+
+      showingTop = !showingTop;
+    }, 5000);
   </script>
 </body>
 </html>
